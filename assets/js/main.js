@@ -4,27 +4,31 @@ const tourDates = [
   // February 2027
   { id: 1, month: "February", city: "Roanoke, VA", dates: "Feb 5–7", status: "confirmed", label: null },
   { id: 2, month: "February", city: "Virginia Beach, VA", dates: "Feb 12–14", status: "confirmed", label: null },
-  { id: 3, month: "February", city: "Tampa, FL", dates: "Feb 19–21", status: "confirmed", label: null },
-  { id: 4, month: "February", city: "Morristown, NJ", dates: "Feb 19–21", status: "confirmed", label: "NEW" },
+  { id: 3, month: "February", city: "Morristown, NJ", dates: "Feb 19–21", status: "confirmed", label: "NEW" },
+  { id: 4, month: "February", city: "Tampa, FL", dates: "Feb 19–21", status: "confirmed", label: null },
   { id: 5, month: "February", city: "Worcester, MA", dates: "Feb 26–28", status: "confirmed", label: null },
 
   // March 2027
-  { id: 6, month: "March", city: "Hartford / Springfield, CT", dates: "Mar 12–14", status: "confirmed", label: null },
-  { id: 7, month: "March", city: "Nashua, NH", dates: "Mar 19–21", status: "confirmed", label: null },
+  { id: 6, month: "March", city: "Hartford / Springfield, MA", dates: "Mar 12–14", status: "confirmed", label: null },
+  { id: 7, month: "March", city: "Long Island, NY", dates: "Mar 12–14", status: "confirmed", label: null },
+  { id: 8, month: "March", city: "Nashua, NH", dates: "Mar 19–21", status: "confirmed", label: null },
 
   // April 2027
-  { id: 8, month: "April", city: "Long Island, NY", dates: "Apr 2–4", status: "tentative", label: "TENTATIVE" },
-  { id: 9, month: "April", city: "Manchester, NH", dates: "Apr 9–11", status: "confirmed", label: null },
-  { id: 10, month: "April", city: "Woonsocket, RI", dates: "Apr 9–11", status: "confirmed", label: null },
-  { id: 11, month: "April", city: "Chicago, IL", dates: "Apr 16–18", status: "confirmed", label: null },
-  { id: 12, month: "April", city: "Columbus, OH", dates: "Apr 16–18", status: "confirmed", label: null },
-  { id: 13, month: "April", city: "Vernon, CT", dates: "Apr 23–25", status: "confirmed", label: null },
-  { id: 14, month: "April", city: "Albany, NY", dates: "Apr 30 – May 2", status: "tentative", label: "TENTATIVE" },
-  { id: 15, month: "April", city: "Worcester, MA", dates: "Apr 30 – May 2", status: "confirmed", label: null },
+  { id: 9, month: "April", city: "Manchester, NH", dates: "Apr 2–4", status: "confirmed", label: null },
+  { id: 10, month: "April", city: "Woodbridge, VA", dates: "Apr 2–4", status: "confirmed", label: null },
+  { id: 11, month: "April", city: "Woonsocket, RI", dates: "Apr 9–11", status: "confirmed", label: null },
+  { id: 12, month: "April", city: "Worcester, MA", dates: "Apr 9–11", status: "confirmed", label: null },
+  { id: 13, month: "April", city: "Chicago, IL", dates: "Apr 16–18", status: "confirmed", label: null },
+  { id: 14, month: "April", city: "Columbus, OH", dates: "Apr 16–18", status: "confirmed", label: null },
+  { id: 15, month: "April", city: "Vernon, CT", dates: "Apr 23–25", status: "confirmed", label: null },
+  { id: 16, month: "April", city: "Worcester, MA", dates: "Apr 30 – May 2", status: "confirmed", label: null },
+
+  // May 2027
+  { id: 17, month: "May", city: "Albany, NY", dates: "May 7–9", status: "confirmed", label: null },
 
   // Nationals 2027 — The Iconic Celebration
-  { id: 16, month: "Nationals", city: "Virginia Beach, VA", dates: "June 28 – July 2", status: "nationals", label: null },
-  { id: 17, month: "Nationals", city: "Mystic, CT", dates: "July 12–16", status: "nationals", label: null }
+  { id: 18, month: "Nationals", city: "Virginia Beach, VA", dates: "June 28 – July 2", status: "nationals", label: null },
+  { id: 19, month: "Nationals", city: "Mystic, CT", dates: "July 12–16", status: "nationals", label: null }
 ];
 
 let currentFilter = "All";
@@ -136,7 +140,7 @@ function filterDates() {
 // Create month filter buttons
 function createMonthFilters() {
   const container = document.getElementById("month-filters");
-  const months = ["All", "February", "March", "April", "Nationals"];
+  const months = ["All", "February", "March", "April", "May", "Nationals"];
 
   months.forEach(month => {
     const btn = document.createElement("button");
@@ -180,30 +184,108 @@ function init() {
   const searchInput = document.getElementById("search-input");
   searchInput.addEventListener("input", filterDates);
 
-  // Form handling (demo only for now)
+  // ============================================
+  // CONFIGURATION - Replace these values after setup
+  // ============================================
+  const GOOGLE_APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbx1Lxz2Vue61gOMkjQqDbFsA1oc1Xcm6-kPYaN4WIKQk6jH7CSw1lA1nVvD4TUUdBWa/exec";
+  const EMAILJS_PUBLIC_KEY = "gLlv1ombHvG9bjmcV";
+  const EMAILJS_SERVICE_ID = "service_dw0woxo";
+  const EMAILJS_TEMPLATE_ID = "template_kabu817";
+
+  // Initialize EmailJS
+  if (typeof emailjs !== "undefined") {
+    emailjs.init(EMAILJS_PUBLIC_KEY);
+  }
+
+  // Real form submission handler
   const form = document.getElementById("interest-form");
-  form.addEventListener("submit", function(e) {
+  form.addEventListener("submit", async function(e) {
+    // Safety check - prevent submission if config is not set yet
+    if (GOOGLE_APPS_SCRIPT_URL.includes("YOUR_GOOGLE_APPS_SCRIPT")) {
+      e.preventDefault();
+      alert("The form is not connected yet. Please finish the Google Apps Script setup first (see GOOGLE_APPS_SCRIPT.md).");
+      return;
+    }
     e.preventDefault();
-    
+
     const button = form.querySelector("button[type='submit']");
     const originalText = button.textContent;
-    
+
     button.disabled = true;
     button.textContent = "Submitting...";
 
-    setTimeout(() => {
+    // Collect form data
+    const formData = new FormData(form);
+    const data = {
+      studio: formData.get("studio"),
+      name: formData.get("name"),
+      role: formData.get("role"),
+      email: formData.get("email"),
+      city_interest: formData.get("city_interest"),
+      routines: formData.get("routines"),
+      timestamp: new Date().toISOString()
+    };
+
+    try {
+      // 1. Send to Google Sheets via Apps Script
+      // Using mode: 'no-cors' because Google Apps Script Web Apps have unreliable CORS support.
+      // We treat any completed fetch (no network error) as success.
+      await fetch(GOOGLE_APPS_SCRIPT_URL, {
+        method: "POST",
+        mode: "no-cors",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data)
+      });
+
+      // If we reach here without a network error, assume the submission succeeded.
+
+      // 2. Send thank-you email via EmailJS (fire and forget)
+      if (typeof emailjs !== "undefined" && EMAILJS_TEMPLATE_ID !== "YOUR_EMAILJS_TEMPLATE_ID_HERE") {
+        emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, {
+          to_email: data.email,
+          to_name: data.name,
+          studio_name: data.studio,
+          role: data.role,
+          city_interest: data.city_interest,
+          routines: data.routines
+        }).catch(err => {
+          console.warn("EmailJS send failed (non-blocking):", err);
+        });
+      }
+
+      // 3. Show success state
       form.innerHTML = `
-        <div class="text-center py-8">
-          <div class="mx-auto w-14 h-14 rounded-full bg-amber-400/20 flex items-center justify-center mb-5">
-            <span class="text-3xl">🎉</span>
+        <div class="text-center py-10">
+          <div class="mx-auto w-16 h-16 rounded-full bg-[#C9A66B]/20 flex items-center justify-center mb-6">
+            <span class="text-4xl">🎉</span>
           </div>
-          <div class="text-2xl font-semibold tracking-tight mb-2">Thank you!</div>
-          <p class="text-zinc-400 max-w-xs mx-auto">
-            You're on the list. We'll be in touch soon with exclusive 2027 updates.
+          <div class="text-3xl font-semibold tracking-tight mb-3">You're on the list!</div>
+          <p class="text-zinc-400 max-w-sm mx-auto mb-6">
+            Thank you. A confirmation email is on its way, and we'll keep you updated on WCTE XV 2027.
           </p>
+          <p class="text-sm text-[#C9A66B]">Early Bird registration opens August 1st, 2026.</p>
         </div>
       `;
-    }, 800);
+
+    } catch (error) {
+      console.error("Submission error:", error);
+      
+      // Show error state
+      button.disabled = false;
+      button.textContent = originalText;
+
+      const errorDiv = document.createElement("div");
+      errorDiv.className = "mt-4 p-4 bg-red-900/30 border border-red-500/40 rounded-2xl text-sm text-red-400 text-center";
+      errorDiv.textContent = "Something went wrong. Please try again or email us directly.";
+      
+      // Remove any previous error
+      const oldError = form.querySelector(".bg-red-900\\/30");
+      if (oldError) oldError.remove();
+      
+      form.appendChild(errorDiv);
+    }
   });
 
   console.log('%c[WCTE XV 2027] Tour dates filter initialized', 'color:#C9A66B');

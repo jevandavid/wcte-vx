@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WCTE XV 2027 • The Iconic Celebration Tour</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body class="bg-zinc-950 text-white font-sans">
@@ -202,7 +203,7 @@
                 <div style="color: #C9A66B;" class="text-sm tracking-[2px]">2027 SEASON</div>
                 <h3 class="text-4xl font-semibold tracking-tight">Tour Dates</h3>
             </div>
-            <div class="text-sm text-zinc-400">All dates shown • More cities coming soon</div>
+            <div class="text-sm text-zinc-400">All dates shown</div>
         </div>
 
         <!-- FILTERS -->
@@ -226,17 +227,6 @@
             <!-- Populated dynamically by JavaScript -->
         </div>
 
-        <!-- Cities Still Needed -->
-        <div class="mt-10">
-            <div class="text-sm uppercase tracking-widest text-zinc-400 mb-3">Additional Cities Being Finalized</div>
-            <div class="flex flex-wrap gap-2">
-                <div class="px-4 py-1.5 bg-white/5 rounded-2xl text-sm border border-white/10">Portland, ME</div>
-                <div class="px-4 py-1.5 bg-white/5 rounded-2xl text-sm border border-white/10">Woodbridge, VA</div>
-                <div class="px-4 py-1.5 bg-white/5 rounded-2xl text-sm border border-white/10">King of Prussia, PA</div>
-                <div class="px-4 py-1.5 bg-white/5 rounded-2xl text-sm border border-white/10">Worcester, MA (2)</div>
-            </div>
-            <p class="text-xs text-zinc-500 mt-3">These markets are in active planning. Dates will be announced as they are confirmed.</p>
-        </div>
     </div>
 
     <!-- Elegant Gold Divider -->
@@ -288,35 +278,33 @@
                     <optgroup label="February 2027">
                         <option value="Roanoke, VA">Roanoke, VA – Feb 5–7</option>
                         <option value="Virginia Beach, VA">Virginia Beach, VA – Feb 12–14</option>
-                        <option value="Tampa, FL">Tampa, FL – Feb 19–21</option>
                         <option value="Morristown, NJ">Morristown, NJ – Feb 19–21</option>
+                        <option value="Tampa, FL">Tampa, FL – Feb 19–21</option>
                         <option value="Worcester, MA">Worcester, MA – Feb 26–28</option>
                     </optgroup>
                     <optgroup label="March 2027">
-                        <option value="Hartford / Springfield, CT">Hartford / Springfield, CT – Mar 12–14</option>
+                        <option value="Hartford / Springfield, MA">Hartford / Springfield, MA – Mar 12–14</option>
+                        <option value="Long Island, NY">Long Island, NY – Mar 12–14</option>
                         <option value="Nashua, NH">Nashua, NH – Mar 19–21</option>
                     </optgroup>
                     <optgroup label="April 2027">
-                        <option value="Long Island, NY">Long Island, NY – Apr 2–4 (Tentative)</option>
-                        <option value="Manchester, NH">Manchester, NH – Apr 9–11</option>
+                        <option value="Manchester, NH">Manchester, NH – Apr 2–4</option>
+                        <option value="Woodbridge, VA">Woodbridge, VA – Apr 2–4</option>
                         <option value="Woonsocket, RI">Woonsocket, RI – Apr 9–11</option>
+                        <option value="Worcester, MA">Worcester, MA – Apr 9–11</option>
                         <option value="Chicago, IL">Chicago, IL – Apr 16–18</option>
                         <option value="Columbus, OH">Columbus, OH – Apr 16–18</option>
                         <option value="Vernon, CT">Vernon, CT – Apr 23–25</option>
-                        <option value="Albany, NY">Albany, NY – Apr 30 – May 2 (Tentative)</option>
-                        <option value="Worcester, MA">Worcester, MA – Apr 30 – May 2</option>
+                        <option value="Worcester, MA (2)">Worcester, MA – Apr 30 – May 2</option>
+                    </optgroup>
+                    <optgroup label="May 2027">
+                        <option value="Albany, NY">Albany, NY – May 7–9</option>
                     </optgroup>
                     <optgroup label="Nationals – 2027 Season Finale">
                         <option value="Virginia Beach Nationals">Virginia Beach, VA – Nationals (June 28 – July 2)</option>
                         <option value="Mystic Nationals">Mystic, CT – Nationals (July 12–16)</option>
                     </optgroup>
-                    <optgroup label="Coming Soon">
-                        <option value="Portland, ME">Portland, ME (Dates TBD)</option>
-                        <option value="Woodbridge, VA">Woodbridge, VA (Dates TBD)</option>
-                        <option value="King of Prussia, PA">King of Prussia, PA (Dates TBD)</option>
-                        <option value="Worcester, MA (2)">Worcester, MA – Second Date (TBD)</option>
-                        <option value="Other / Not Sure">Other / Not Sure Yet</option>
-                    </optgroup>
+
                 </select>
             </div>
 
