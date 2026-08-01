@@ -5,11 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WCTE XV 2027 • The Iconic Celebration Tour</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body class="bg-zinc-950 text-white font-sans">
-
     <!-- NAV -->
     <nav class="sticky top-0 z-50 bg-zinc-950/95 backdrop-blur-lg border-b border-white/10">
         <div class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
@@ -20,14 +18,13 @@
                     <img src="assets/images/WCTE white-bevel-lowres.png" alt="WCTE" class="h-10 w-auto">
                 </div>
             </div>
-
             <div class="flex items-center gap-8 text-sm">
                 <a href="#dates" class="hover:text-[#C9A66B] transition-colors hidden md:block">2027 Dates</a>
                 <a href="#why" class="hover:text-[#C9A66B] transition-colors hidden md:block">Why XV</a>
-                <button onclick="document.getElementById('form').scrollIntoView({ behavior: 'smooth' })" 
-                        class="px-6 py-2.5 rounded-2xl bg-white text-black text-sm font-medium hover:bg-[#E8D5A3] transition-all">
-                    Be A Part of History
-                </button>
+                <a href="https://wcte.mydanceregister.com/"
+                   class="px-6 py-2.5 rounded-2xl bg-white text-black text-sm font-medium hover:bg-[#E8D5A3] transition-all">
+                    Place a Deposit
+                </a>
             </div>
         </div>
     </nav>
@@ -35,42 +32,38 @@
     <!-- HERO -->
     <div class="relative min-h-[620px] md:min-h-[680px] flex items-center overflow-hidden">
         <!-- Hero Background Image (PLACEHOLDER - Replace with real WCTE photography) -->
-        <div class="absolute inset-0 bg-cover bg-center" 
+        <div class="absolute inset-0 bg-cover bg-center"
              style="background-image: url('assets/images/hero.jpg');">
             <!-- Dark overlay for readability -->
             <div class="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black/80"></div>
             <!-- Subtle gold gradient accent -->
             <div class="absolute inset-0 bg-gradient-to-r from-black/40 via-transparent to-black/30"></div>
         </div>
-
         <div class="relative max-w-6xl mx-auto px-6 pt-12 pb-16">
             <div class="max-w-2xl">
                 <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 text-xs tracking-[2px] mb-6">
                     <div class="w-1.5 h-1.5 rounded-full animate-pulse" style="background-color: #C9A66B;"></div>
                     15TH ANNIVERSARY SEASON
                 </div>
-
                 <h1 class="text-6xl md:text-7xl font-semibold tracking-tighter leading-none text-white">
                     WCTE XV<br>
                     <span style="color: #C9A66B;">The Iconic Celebration Tour</span>
                 </h1>
-
                 <p class="mt-6 text-2xl text-zinc-200 max-w-lg leading-tight">
                     2027. Our 15th year.<br>
                     The biggest celebration in WCTE history.
                 </p>
-
                 <div class="mt-8 flex flex-col sm:flex-row gap-4">
-                    <button onclick="document.getElementById('form').scrollIntoView({ behavior: 'smooth' })" 
-                            class="px-8 py-4 rounded-2xl gold-button font-medium text-lg">
-                        Be A Part of History
-                    </button>
-                    <button onclick="document.getElementById('dates').scrollIntoView({ behavior: 'smooth' })" 
+                    <a href="https://wcte.mydanceregister.com/"
+                       class="px-8 py-4 rounded-2xl gold-button font-medium text-lg text-center">
+                        Place a Deposit
+                    </a>
+                    <button onclick="document.getElementById('dates').scrollIntoView({ behavior: 'smooth' })"
                             class="px-8 py-4 rounded-2xl border border-white/40 text-white hover:bg-white/10 font-medium text-lg transition-all">
                         See the 2027 Dates
                     </button>
                 </div>
-                <p class="mt-4 text-sm text-zinc-400">Stress free. Simply RSVP. Just stay informed.</p>
+                <p class="mt-4 text-sm text-zinc-400">Early Bird registration is now open.</p>
             </div>
         </div>
     </div>
@@ -105,8 +98,8 @@
                 <h2 class="text-5xl font-semibold tracking-tighter leading-none">This isn’t just another season.<br>It’s the celebration.</h2>
             </div>
             <div class="md:col-span-7 mt-8 md:mt-0 text-lg text-zinc-400 leading-relaxed">
-                For 15 years, WCTE has created stages where dancers grow, studios thrive, and memories are made. 
-                In 2027 we’re throwing the biggest party in our history — with elevated experiences, unforgettable moments, 
+                For 15 years, WCTE has created stages where dancers grow, studios thrive, and memories are made.
+                In 2027 we’re throwing the biggest party in our history — with elevated experiences, unforgettable moments,
                 and the same heart and professionalism you’ve come to expect from us.
             </div>
         </div>
@@ -118,7 +111,6 @@
             <div style="color: #C9A66B;" class="text-sm tracking-[2px]">WHAT MAKES XV SPECIAL</div>
             <h3 class="text-4xl font-semibold tracking-tight mt-2">The Iconic Celebration Tour</h3>
         </div>
-
         <div class="grid md:grid-cols-3 gap-6">
             <div class="bg-zinc-900 rounded-3xl p-8">
                 <div style="color: #C9A66B;" class="text-3xl mb-4">★</div>
@@ -144,7 +136,6 @@
             <div style="color: #C9A66B;" class="text-sm tracking-[2px] mb-2">WHAT STUDIOS SAY</div>
             <h3 class="text-4xl font-semibold tracking-tight">Real Voices from the WCTE Family</h3>
         </div>
-
         <div class="grid md:grid-cols-3 gap-8">
             <!-- Testimonial 1 -->
             <div class="bg-zinc-900 rounded-3xl p-8 border border-white/10">
@@ -161,7 +152,6 @@
                     “I want to express my utmost appreciation to you and your staff for providing a competition that was perfectly organized and enjoyable. W.C.T.E. provides the 'whole package' better than anyone else! You have a huge staff and everyone works with the utmost professionalism.”
                 </blockquote>
             </div>
-
             <!-- Testimonial 2 -->
             <div class="bg-zinc-900 rounded-3xl p-8 border border-white/10">
                 <div class="flex items-center gap-4 mb-6">
@@ -177,7 +167,6 @@
                     “An organization that puts the children first!!!!! An organization that considers/includes EVERYONE, one that celebrates the smallest school, retiring director, to the largest team! You are there for all of us!!! You make EVERYONE feel the love of dance. Thank you for making an experience of a lifetime!”
                 </blockquote>
             </div>
-
             <!-- Testimonial 3 -->
             <div class="bg-zinc-900 rounded-3xl p-8 border border-white/10">
                 <div class="flex items-center gap-4 mb-6">
@@ -205,133 +194,29 @@
             </div>
             <div class="text-sm text-zinc-400">All dates shown</div>
         </div>
-
         <!-- FILTERS -->
         <div class="flex flex-col md:flex-row gap-4 mb-6">
             <!-- Search -->
             <div class="flex-1">
-                <input id="search-input" 
-                       type="text" 
-                       placeholder="Search by city..." 
+                <input id="search-input"
+                       type="text"
+                       placeholder="Search by city..."
                        class="w-full bg-zinc-900 border border-white/20 focus:border-[#C9A66B] rounded-2xl px-5 py-3 text-white placeholder:text-zinc-500 outline-none">
             </div>
-
             <!-- Month Filters -->
             <div id="month-filters" class="flex flex-wrap gap-2">
                 <!-- Populated by JS -->
             </div>
         </div>
-
         <!-- Dates List -->
         <div id="dates-list" class="space-y-3 bg-zinc-900/80 rounded-3xl p-3 border border-white/10 backdrop-blur-sm">
             <!-- Populated dynamically by JavaScript -->
         </div>
-
     </div>
 
     <!-- Elegant Gold Divider -->
     <div class="max-w-6xl mx-auto px-6">
         <div class="h-px w-full" style="background: linear-gradient(to right, transparent, #C9A66B, transparent); opacity: 0.3;"></div>
-    </div>
-
-    <!-- INTEREST FORM -->
-    <div id="form" class="max-w-3xl mx-auto px-6 py-16 border-t border-white/10">
-        <div class="text-center mb-10">
-            <div style="color: #C9A66B;" class="text-sm tracking-[2px] mb-2">BE PART OF THE CELEBRATION</div>
-            <h3 class="text-4xl font-semibold tracking-tight">Be A Part of History</h3>
-            <p class="mt-3 text-zinc-400 max-w-md mx-auto">Stay informed about the 2027 Iconic Celebration Tour. Stress free, simply RSVP for the celebration. Note: Early Bird registration opens August 1st, 2026.</p>
-        </div>
-
-        <form id="interest-form" class="bg-zinc-900 border border-white/10 rounded-3xl p-8 md:p-10 space-y-6">
-            <div class="grid md:grid-cols-2 gap-6">
-                <div>
-                    <label class="block text-xs uppercase tracking-widest text-zinc-400 mb-2">Studio Name</label>
-                    <input type="text" name="studio" required class="w-full bg-zinc-950 border border-white/15 focus:border-[#C9A66B] rounded-2xl px-5 py-3 outline-none">
-                </div>
-                <div>
-                    <label class="block text-xs uppercase tracking-widest text-zinc-400 mb-2">Your Name</label>
-                    <input type="text" name="name" required class="w-full bg-zinc-950 border border-white/15 focus:border-[#C9A66B] rounded-2xl px-5 py-3 outline-none">
-                </div>
-            </div>
-
-            <div class="grid md:grid-cols-2 gap-6">
-                <div>
-                    <label class="block text-xs uppercase tracking-widest text-zinc-400 mb-2">Your Role</label>
-                    <select name="role" required class="w-full bg-zinc-950 border border-white/15 focus:border-[#C9A66B] rounded-2xl px-5 py-3 outline-none">
-                        <option value="">Select role...</option>
-                        <option value="Studio Owner">Studio Owner</option>
-                        <option value="Director">Director</option>
-                        <option value="Studio Representative">Studio Representative</option>
-                    </select>
-                </div>
-                <div>
-                    <label class="block text-xs uppercase tracking-widest text-zinc-400 mb-2">Email Address</label>
-                    <input type="email" name="email" required class="w-full bg-zinc-950 border border-white/15 focus:border-[#C9A66B] rounded-2xl px-5 py-3 outline-none">
-                </div>
-            </div>
-
-            <!-- City of Interest Dropdown -->
-            <div>
-                <label class="block text-xs uppercase tracking-widest text-zinc-400 mb-2">City / Event of Interest</label>
-                <select name="city_interest" required class="w-full bg-zinc-950 border border-white/15 focus:border-[#C9A66B] rounded-2xl px-5 py-3 outline-none">
-                    <option value="">Select a city or event...</option>
-                    <optgroup label="February 2027">
-                        <option value="Roanoke, VA">Roanoke, VA – Feb 5–7</option>
-                        <option value="Virginia Beach, VA">Virginia Beach, VA – Feb 12–14</option>
-                        <option value="Morristown, NJ">Morristown, NJ – Feb 19–21</option>
-                        <option value="Tampa, FL">Tampa, FL – Feb 19–21</option>
-                        <option value="Worcester, MA">Worcester, MA – Feb 26–28</option>
-                    </optgroup>
-                    <optgroup label="March 2027">
-                        <option value="Hartford / Springfield, MA">Hartford / Springfield, MA – Mar 12–14</option>
-                        <option value="Long Island, NY">Long Island, NY – Mar 12–14</option>
-                        <option value="Nashua, NH">Nashua, NH – Mar 19–21</option>
-                    </optgroup>
-                    <optgroup label="April 2027">
-                        <option value="Manchester, NH">Manchester, NH – Apr 2–4</option>
-                        <option value="Woodbridge, VA">Woodbridge, VA – Apr 2–4</option>
-                        <option value="Woonsocket, RI">Woonsocket, RI – Apr 9–11</option>
-                        <option value="Worcester, MA">Worcester, MA – Apr 9–11</option>
-                        <option value="Chicago, IL">Chicago, IL – Apr 16–18</option>
-                        <option value="Columbus, OH">Columbus, OH – Apr 16–18</option>
-                        <option value="Vernon, CT">Vernon, CT – Apr 23–25</option>
-                        <option value="Worcester, MA (2)">Worcester, MA – Apr 30 – May 2</option>
-                    </optgroup>
-                    <optgroup label="May 2027">
-                        <option value="Albany, NY">Albany, NY – May 7–9</option>
-                    </optgroup>
-                    <optgroup label="Nationals – 2027 Season Finale">
-                        <option value="Virginia Beach Nationals">Virginia Beach, VA – Nationals (June 28 – July 2)</option>
-                        <option value="Mystic Nationals">Mystic, CT – Nationals (July 12–16)</option>
-                    </optgroup>
-
-                </select>
-            </div>
-
-            <!-- Number of Routines -->
-            <div>
-                <label class="block text-xs uppercase tracking-widest text-zinc-400 mb-2">
-                    How many routines are you interested in entering? <span class="text-zinc-500">(if known)</span>
-                </label>
-                <select name="routines" class="w-full bg-zinc-950 border border-white/15 focus:border-[#C9A66B] rounded-2xl px-5 py-3 outline-none">
-                    <option value="">Select an option...</option>
-                    <option value="5-25">5 – 25 routines</option>
-                    <option value="26-50">26 – 50 routines</option>
-                    <option value="51-75">51 – 75 routines</option>
-                    <option value="75-100">75 – 100 routines</option>
-                    <option value="100+">100+ routines</option>
-                </select>
-            </div>
-
-            <div class="pt-2">
-                <button type="submit" 
-                        class="w-full md:w-auto px-10 py-4 rounded-2xl gold-button font-medium text-lg">
-                    Be A Part of History
-                </button>
-            </div>
-
-            <p class="text-xs text-center text-zinc-500">We’ll only send important 2027 updates. You can unsubscribe anytime.</p>
-        </form>
     </div>
 
     <!-- FOOTER -->
@@ -341,7 +226,6 @@
             <div class="mb-6">
                 <img src="assets/images/WCTE white-bevel-lowres.png" alt="WCTE" class="h-8 w-auto">
             </div>
-
             <div class="flex flex-col md:flex-row gap-y-4 items-center justify-between text-sm text-zinc-400">
                 <div>© 2026 World-Class Talent Experience. All rights reserved.</div>
                 <div class="flex gap-6">
@@ -351,7 +235,6 @@
             </div>
         </div>
     </footer>
-
     <script src="assets/js/main.js"></script>
 </body>
 </html>
